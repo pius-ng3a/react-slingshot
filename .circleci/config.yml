@@ -14,11 +14,13 @@ jobs:
     executor: lw_executor # this uses a predefined docker image for execution
     steps:
       - checkout
+      - run: npm i
       - run: npm run lint
   test:
     executor: lw_executor # predefined
     steps:
       - checkout
+      - run: npm i
       - run: npm run test
        
   analyze:
