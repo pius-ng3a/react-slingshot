@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 name: Feature request
 about: Suggest an idea for this project
@@ -15,3 +16,22 @@ A clear and concise description of any alternative solutions or features you've 
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
+=======
+---
+name: Feature request
+about: Suggest an idea for this project
+
+---
+
+**Is your feature request related to a problem? Please describe.**
+A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+
+**Describe the solution you'd like**
+A clear and concise description of what you want to happen.
+
+**Describe alternatives you've considered**
+A clear and concise description of any alternative solutions or features you've considered.
+
+**Additional context**
+Add any other context or screenshots about the feature request here.
+>>>>>>> a7b0c6111cceaf88ffa4c24df3b38401f045a3d1
