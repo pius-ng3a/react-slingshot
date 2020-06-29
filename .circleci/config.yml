@@ -1,0 +1,42 @@
+version: 2.1
+executors:
+  general-executor:
+    docker:
+      - image: circleci/ruby:2.4.1
+  lw_executor:
+    docker:
+      - image: circleci/node:13.8.0
+orbs:
+  node: circleci/node@1.1
+jobs:
+  
+  build:
+    executor: lw_executor # this uses a predefined docker image for execution
+    steps:
+      - checkout
+      - run: npm run lint
+  test:
+    executor: lw_executor # predefined
+    steps:
+      - checkout
+      - run: npm run test
+       
+  analyze:
+    executor: lw_executor # this uses a predefined docker image for execution
+    steps:
+      - checkout
+      - run:  npm audit
+   
+
+workflows: # workflow is used to coordinate job execution. Some jobs may only get executed after others
+  version: 2.1
+  My_workflow: #use any convenient name for the workflow
+    jobs: #list the jobs this workflow should run
+      - build
+      - test:
+          requires:
+            - build
+      - analyze:
+          requires:
+            - test
+      
